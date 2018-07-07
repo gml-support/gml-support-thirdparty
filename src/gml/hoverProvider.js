@@ -23,7 +23,15 @@ const GMLHoverProvider = ((() => {
                 let backidx = wordRange.start.translate({ characterDelta: -1 });
                 backchar = backidx.character < 0 ? '' : document.getText(new vscode_1.Range(backidx, wordRange.start));
             }
-            const entry = gmlThirdparty.thirdfunctions[name] || gmlThirdparty.thirdconstants[name];
+            let isChinese = vscode_1.workspace.getConfiguration('gmlsupport').get('thirdparty.isChinese', false);
+            if (isChinese == true)
+            {
+                const entry = gmlThirdparty.thirdfunctions[name] || gmlThirdparty.thirdconstants[name] || gmlThirdparty.cnthirdfunctions[name] || gmlThirdparty.cnthirdconstants[name];
+            }
+            else
+            {
+                const entry = gmlThirdparty.thirdfunctions[name] || gmlThirdparty.thirdconstants[name];
+            }
             if (entry && entry.description && entry.available) {
                 const signature = entry.signature;
                 const availability = "GM Language Availability: ";

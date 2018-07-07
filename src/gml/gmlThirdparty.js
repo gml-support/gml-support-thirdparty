@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-exports.thirdfunctions = {
+exports.thirdfunctions = {};
+
+exports.thirdconstants = {};
+
+exports.cnthirdfunctions = {
     //Plugin: MaizeMusic
     //Author: Mage 松仁玉米 <http://www.magecorn.com>
     //Website: http://www.magecorn.com/p/254.shtml
@@ -347,4 +351,4 @@ exports.thirdfunctions = {
     },
 };
 
-exports.thirdconstants = {}
+exports.cnthirdconstants = {}

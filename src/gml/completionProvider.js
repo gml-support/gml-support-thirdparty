@@ -61,6 +61,22 @@ class GMLCompletionItemProvider {
                 result.push(createNewProposal(vscode_1.CompletionItemKind.Field, thirdconstants, gmlThirdparty.thirdconstants[thirdconstants]));
             }
         }
+        let isChinese = vscode_1.workspace.getConfiguration('gmlsupport').get('thirdparty.isChinese', false);
+        if (isChinese == true)
+        {
+            for (const thirdfunctions in gmlThirdparty.cnthirdfunctions) {
+                if (gmlThirdparty.cnthirdfunctions.hasOwnProperty(cnthirdfunctions) && matches(cnthirdfunctions)) {
+                    added[thirdfunctions] = true;
+                    result.push(createNewProposal(vscode_1.CompletionItemKind.Function, thirdfunctions, gmlThirdparty.cnthirdfunctions[cnthirdfunctions]));
+                }
+            }
+            for (const cnthirdconstants in gmlThirdparty.cnthirdconstants) {
+                if (gmlThirdparty.cnthirdconstants.hasOwnProperty(cnthirdconstants) && matches(cnthirdconstants)) {
+                    added[cnthirdconstants] = true;
+                    result.push(createNewProposal(vscode_1.CompletionItemKind.Field, cnthirdconstants, gmlThirdparty.cnthirdconstants[cnthirdconstants]));
+                }
+            }
+        }
         const text = document.getText();
         const functionMatch = /^\w+\s+([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\s*\(/mg;
         let match = null;

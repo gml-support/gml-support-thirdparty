@@ -65,7 +65,15 @@ class GMLSignatureHelpProvider {
         if (!ident) {
             return null;
         }
-        const entry = gmlThirdparty.thirdfunctions[ident] || gmlThirdparty.thirdconstants[ident];
+        let isChinese = vscode_1.workspace.getConfiguration('gmlsupport').get('thirdparty.isChinese', false);
+        if (isChinese == true)
+        {
+            const entry = gmlThirdparty.thirdfunctions[ident] || gmlThirdparty.thirdconstants[ident] || gmlThirdparty.cnthirdfunctions[ident] || gmlThirdparty.cnthirdconstants[ident];
+        }
+        else
+        {
+            const entry = gmlThirdparty.thirdfunctions[ident] || gmlThirdparty.thirdconstants[ident];
+        }
         if (!entry || !entry.signature) {
             return null;
         }
