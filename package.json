@@ -1,0 +1,64 @@
+{
+  "name": "gml-support-thirdparty",
+  "displayName": "GML Support ThirdParty",
+  "description": "Third-party GameMaker plugins support for GML Support.",
+  "version": "1.0.0",
+  "publisher": "liaronce",
+  "publisherName": "LiarOnce",
+  "icon": "icon.png",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/gml-support/gml-support-thirdparty/blob/master/README.md",
+  "engines": {
+    "vscode": "^1.8.0"
+  },
+  "activationEvents": [
+    "onLanguage:gml-gm81",
+    "onLanguage:gml-gms",
+    "onLanguage:gml-gms2"
+	],
+	"main": "./src/extension",
+  "author": {
+    "email": "qq1062787843@hotmail.com",
+    "name": "Mark Shi",
+    "url": "https://me.liaronce.win"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "extensionDependencies": [
+    "robertohuertasm.vscode-icons"
+  ],
+  "dependencies": {
+       "vscode-nls": "^2.0.2"
+  },
+  "bugs": {
+      "url": "https://github.com/gml-support/gml-support-thirdparty/issues"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/gml-support/gml-support-thirdparty.git"
+  },
+  "contributes": {
+    "configuration": {
+        "title": "GML Support ThirdParty Settings",
+        "type": "object",
+        "properties": {
+            "gmlsupport.thirdparty.isChinese": {
+                "type": "boolean",
+                "default": false,
+                "description": "%gmlsupport.thirdparty.isChinese.description%"
+            }
+        }
+    },
+    "grammars": [
+      {
+        "scopeName": "source.gml-thirdparty",
+        "path": "./syntaxes/thirdparty.json"
+      },
+      {
+        "scopeName": "source.gml-extra",
+        "path": "none"
+      }
+    ]
+  }
+}
