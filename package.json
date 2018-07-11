@@ -25,9 +25,6 @@
   "categories": [
     "Programming Languages"
   ],
-  "extensionDependencies": [
-    "robertohuertasm.vscode-icons"
-  ],
   "dependencies": {
        "vscode-nls": "^2.0.2"
   },

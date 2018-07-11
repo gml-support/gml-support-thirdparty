@@ -61,13 +61,13 @@ class GMLCompletionItemProvider {
                 result.push(createNewProposal(vscode_1.CompletionItemKind.Field, thirdconstants, gmlThirdparty.thirdconstants[thirdconstants]));
             }
         }
-        let isChinese = vscode_1.workspace.getConfiguration('gmlsupport').get('thirdparty.isChinese', false);
-        if (isChinese == true)
+        let isChinese = vscode_1.workspace.getConfiguration('gmlsupport').get('thirdparty.isChinese', true);
+        if (isChinese)
         {
-            for (const thirdfunctions in gmlThirdparty.cnthirdfunctions) {
+            for (const cnthirdfunctions in gmlThirdparty.cnthirdfunctions) {
                 if (gmlThirdparty.cnthirdfunctions.hasOwnProperty(cnthirdfunctions) && matches(cnthirdfunctions)) {
-                    added[thirdfunctions] = true;
-                    result.push(createNewProposal(vscode_1.CompletionItemKind.Function, thirdfunctions, gmlThirdparty.cnthirdfunctions[cnthirdfunctions]));
+                    added[cnthirdfunctions] = true;
+                    result.push(createNewProposal(vscode_1.CompletionItemKind.Function, cnthirdfunctions, gmlThirdparty.cnthirdfunctions[cnthirdfunctions]));
                 }
             }
             for (const cnthirdconstants in gmlThirdparty.cnthirdconstants) {
